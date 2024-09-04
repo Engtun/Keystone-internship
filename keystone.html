@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Checklist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ransomware Protection Assessment</h1>
+        <p>Select the elements you use in your company.</p>
+    </header>
+    
+    <main>
+        <div class="options">
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="iot"> Internet of Things (IoT)
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="firmware"> Firmware
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="vpn"> VPN
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="firewall"> Firewall
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="waf"> WAF
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="wifi"> Wi-Fi
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="rdp"> RDP
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="elements" data-element="cloud"> Cloud
+                </label>
+            </div>
+        </div>
+        
+        <button onclick="selectElements()">Generate Checklist</button>
+        
+        <div id="checklist-container" style="display: none;">
+            <div id="checklist"></div>
+        </div>
+        
+        <button id="generate-report-btn" onclick="generateReport()" style="display: none;">Generate Equipment Security Report</button>
+        
+        <div id="report" style="display: none;"></div>
+    </main>
+
+    <div id="security-assessment">
+  <h2>Security Assessment Against Various Attack Techniques</h2>
+  <form id="security-checklist">
+    
+    <!-- Man-in-the-Middle (MitM) Attacks -->
+    <h3>Man-in-the-Middle (MitM) Attacks</h3>
+    <label><input type="checkbox" name="mitm" value="Use Secure Communication Protocols"> Use Secure Communication Protocols:</label><br>
+    <label><input type="checkbox" name="mitm" value="Implement Network Segmentation"> Implement Network Segmentation</label><br>
+    <label><input type="checkbox" name="mitm" value="Deploy Firewalls and IDS/IPS"> Deploy Firewalls and Intrusion Detection/Prevention Systems (IDS/IPS)</label><br>
+    <label><input type="checkbox" name="mitm" value="Use Virtual Private Networks (VPNs)"> Use Virtual Private Networks (VPNs)</label><br>
+    
+    <!-- Phishing/Social Engineering -->
+    <h3>Phishing/Social Engineering</h3>
+    <label><input type="checkbox" name="phishing" value="Email Filtering and Anti-Spam"> Email Filtering and Anti-Spam</label><br>
+    <label><input type="checkbox" name="phishing" value="Anti-Phishing Software"> Anti-Phishing Software</label><br>
+    <label><input type="checkbox" name="phishing" value="Domain-based Message Authentication, Reporting & Conformance (DMARC)"> Domain-based Message Authentication, Reporting & Conformance (DMARC)</label><br>
+    <label><input type="checkbox" name="phishing" value="Secure Web Gateways (SWG)"> Secure Web Gateways (SWG)</label><br>
+    <label><input type="checkbox" name="phishing" value="Multi-Factor Authentication (MFA)"> Multi-Factor Authentication (MFA)</label><br>
+    <label><input type="checkbox" name="phishing" value="Browser Extensions"> Browser Extensions</label><br>
+    <label><input type="checkbox" name="phishing" value="Software Updates"> Software Updates</label><br>
+    <label><input type="checkbox" name="phishing" value="Security Awareness Training"> Security Awareness Training</label><br>
+    <label><input type="checkbox" name="phishing" value="Phishing Simulations"> Phishing Simulations</label><br>
+    <label><input type="checkbox" name="phishing" value="Phishing Reporting Mechanisms"> Phishing Reporting Mechanisms</label><br>
+    <label><input type="checkbox" name="phishing" value="Password Management Policies"> Password Management Policies</label><br>
+    <label><input type="checkbox" name="phishing" value="Least Privilege Access"> Least Privilege Access</label><br>
+    <label><input type="checkbox" name="phishing" value="Data Backup and Recovery"> Data Backup and Recovery</label><br>
+    <label><input type="checkbox" name="phishing" value="Incident Response Plan"> Incident Response Plan</label><br>
+    
+    <!-- Malicious Websites -->
+    <h3>Malicious Websites</h3>
+    <label><input type="checkbox" name="malicious" value="Safe Browsing Practices"> Safe Browsing Practices</label><br>
+    <label><input type="checkbox" name="malicious" value="Web Filtering"> Web Filtering</label><br>
+    <label><input type="checkbox" name="malicious" value="Content Security Policy (CSP)"> Content Security Policy (CSP)</label><br>
+    <label><input type="checkbox" name="malicious" value="DNS Filtering"> DNS Filtering</label><br>
+    <label><input type="checkbox" name="malicious" value="Browser Extensions"> Browser Extensions</label><br>
+    <label><input type="checkbox" name="malicious" value="Antivirus and Anti-malware Software"> Antivirus and Anti-malware Software</label><br>
+    <label><input type="checkbox" name="malicious" value="Application Whitelisting"> Application Whitelisting</label><br>
+    
+    <!-- Compromised Software or Patches -->
+    <h3>Compromised Software or Patches</h3>
+    <label><input type="checkbox" name="patches" value="Centralized Patch Management"> Centralized Patch Management:Implement a system to centrally manage and deploy  software updates across all devices within your company. This ensures all machines receive critical security patches promptly.</label><br>
+    <label><input type="checkbox" name="patches" value="Patch Prioritization"> Patch Prioritization:Prioritize patching critical systems and applications first, especially those  facing the internet or handling sensitive data.</label><br>
+    <label><input type="checkbox" name="patches" value="Automated Patching"> Automated Patching: Automate the patching process whenever possible to minimize delays and  human error.</label><br>
+    <label><input type="checkbox" name="patches" value="Vulnerability Scanning"> Vulnerability Scanning:Regularly scan your systems for vulnerabilities to identify potential weaknesses  before attackers exploit them.</label><br>
+    <label><input type="checkbox" name="patches" value="Patch Testing"> Patch Testing:Consider a testing environment to pilot patches before deploying them across the  entire network. This helps identify any potential conflicts or issues.</label><br>
+    <label><input type="checkbox" name="patches" value="Software Restriction Policies"> Software Restriction Policies:Use software restriction policies to limit the execution of  unauthorized software or applications, potentially containing hidden malware. </label><br>
+    <label><input type="checkbox" name="patches" value="Weak or Stolen Credentials"> Weak or Stolen Credentials</label><br>
+    <label><input type="checkbox" name="patches" value="Minimum Password Length"> Minimum Password Length:Require passwords to be at least 15 characters long, making them more difficult to crack with brute-force attacks.</label><br>
+    <label><input type="checkbox" name="patches" value="Password Complexity"> Password Complexity:Mandate a combination of uppercase and lowercase letters, numbers, and symbols in passwords.</label><br>
+    <label><input type="checkbox" name="patches" value="Password Uniqueness"> Password Uniqueness:Enforce unique passwords for different accounts. Avoid password reuse across personal and work accounts</label><br>
+    <label><input type="checkbox" name="patches" value="Regular Password Changes"> Regular Password Changes:Implement mandatory password changes every 3-6 months to reduce the window of vulnerability if a credential is compromised.</label><br>
+    <label><input type="checkbox" name="patches" value="Password Managers"> Password Managers:Encourage the use of password managers to generate and store strong, unique passwords for various accounts.</label><br>
+    <label><input type="checkbox" name="patches" value="Multi-Factor Authentication (MFA)"> Multi-Factor Authentication (MFA)</label><br>
+    
+    <!-- Insider Threats -->
+    <h3>Insider Threats</h3>
+    <label><input type="checkbox" name="insider" value="Thorough Employee Screening"> Thorough Employee Screening:Conduct background checks and reference checks for potential employees to identify any red flags.</label><br>
+    <label><input type="checkbox" name="insider" value="Security Awareness Training"> Security Awareness Training:: Educate employees on cybersecurity best practices, including identifying phishing attempts, password security, and data handling procedures. Regularly update training to address evolving threats.</label><br>
+    <label><input type="checkbox" name="insider" value="Principle of Least Privilege"> Principle of Least Privilege:: Grant employees only the minimum access level required to perform their jobs. This reduces the potential damage if an insider decides to misuse their access.</label><br>
+    <label><input type="checkbox" name="insider" value="Data Classification and Access Controls"> Data Classification and Access Controls:: Classify your data based on sensitivity and restrict access based on the classification. Implement strong access controls to prevent unauthorized access to sensitive information.</label><br>
+    <label><input type="checkbox" name="insider" value="Activity Monitoring and User Behavior Analytics (UBA)"> Activity Monitoring and User Behavior Analytics (UBA):: Monitor user activity for suspicious behavior, such as attempting to access unauthorized data or downloading large amounts of data unexpectedly. UBA can help identify anomalies that might indicate malicious intent.</label><br>
+    <label><input type="checkbox" name="insider" value="Endpoint Security Solutions"> Endpoint Security Solutions: Implement endpoint detection and response (EDR) solutions to monitor devices for malware and other threats. These can help detect and prevent insider attempts to install malicious software or steal data.</label><br>
+    <label><input type="checkbox" name="insider" value="Encryption"> Encryption:Encrypt sensitive data at rest and in transit to make it unreadable even if accessed by unauthorized users.</label><br>
+    <label><input type="checkbox" name="insider" value="Incident Response Plan"> Incident Response Plan:Develop a clear and well-defined incident response plan that outlines the steps to take in case of a suspected insider threat. This plan should include procedures for isolating the threat, containing the damage, and recovering from the incident.</label><br>
+    <label><input type="checkbox" name="insider" value="Whistleblower Policy"> Whistleblower Policy:Encourage employees to report suspicious activity without fear of retaliation. This can help identify insider threats early on before they can cause significant damage.</label><br>
+    <label><input type="checkbox" name="insider" value="Regular Security Audits"> Regular Security Audits:Conduct regular security audits to identify vulnerabilities in your systems and processes that could be exploited by insider threats. </label><br>
+    
+    <!-- Removable Media -->
+    <h3>Removable Media</h3>
+    <label><input type="checkbox" name="removable" value="Removable Media Scanning Stations"> Removable Media Scanning Stations:Implement dedicated scanning stations for employees to scan removable media before connecting them to their work computers.</label><br>
+    <label><input type="checkbox" name="removable" value="Data Loss Prevention (DLP)"> Data Loss Prevention (DLP):Explore DLP solutions to monitor and control data transfers to and from removable media. This can help prevent sensitive information from being leaked unintentionally.</label><br>
+    <label><input type="checkbox" name="removable" value="Limit Usage"> Limit Usage:Restrict the use of removable media to authorized personnel and specific work scenarios where necessary</label><br>
+    <label><input type="checkbox" name="removable" value="Inventory and Control"> Inventory and Control:Maintain an inventory of authorized removable media and implement procedures for secure storage when not in use.</label><br>
+    <label><input type="checkbox" name="removable" value="Lost and Found Policy"> Lost and Found Policy:Establish a clear protocol for reporting lost or found removable media</label><br>
+    <label><input type="checkbox" name="removable" value="Develop a Clear Policy"> Develop a Clear Policy:Create a policy outlining acceptable usage of removable media, including types allowed, authorization procedures, and security protocols</label><br>
+    <label><input type="checkbox" name="removable" value="User Education"> User Education:Train employees on the risks associated with removable media and best practices for safe usage. This should cover identifying suspicious devices, avoiding unknown sources, and reporting lost or found media.</label><br>
+    <label><input type="checkbox" name="removable" value="Disable Auto-Run"> Disable Auto-Run:Prevent automatic execution of files from removable media upon insertion. Users should manually choose to open files after scanning with antivirus software.</label><br>
+    <label><input type="checkbox" name="removable" value="Restrict Write Access"> Restrict Write Access:Consider restricting write access to removable media for some users. This reduces the risk of sensitive data being transferred out unintentionally.</label><br>
+    <label><input type="checkbox" name="removable" value="Endpoint Security Software"> Endpoint Security Software:Ensure all company devices have up-to-date antivirus and anti-malware software with real-time scanning capabilities.</label><br>
+    <label><input type="checkbox" name="removable" value="Disk Encryption"> Disk Encryption:For sensitive data, consider encrypting it before storing it on removable media. This adds an extra layer of security in case the device is lost or stolen. </label><br>
+    
+    <!-- Supply Chain Attacks -->
+    <h3>Supply Chain Attacks</h3>
+    <label><input type="checkbox" name="supplychain" value="Scrutinize Vendor Security"> Scrutinize Vendor Security:Conduct thorough assessments of potential vendors' security posture. Look for certifications, security practices, and a history of data breaches.</label><br>
+    <label><input type="checkbox" name="supplychain" value="Contractual Security Clauses"> Contractual Security Clauses:Include watertight security clauses in vendor contracts. These should outline security expectations, data handling procedures, and breach notification protocols.</label><br>
+    <label><input type="checkbox" name="supplychain" value="Regular Security Audits"> Regular Security Audits:Schedule regular security audits of your vendors to ensure they maintain robust security measures.</label><br>
+    <label><input type="checkbox" name="supplychain" value="Software Bill of Materials (SBOM)"> Software Bill of Materials (SBOM):Implement a Software Bill of Materials (SBOM) to identify all components within the software you use, including open-source libraries. This helps pinpoint vulnerabilities that might exist within the supply chain.</label><br>
+    <label><input type="checkbox" name="supplychain" value="Code Signing and Verification"> Code Signing and Verification:Enforce code signing and verification processes for all software deployed within your company. This helps ensure the software hasn't been tampered with during its journey from the developer to your system.</label><br>
+    <label><input type="checkbox" name="supplychain" value="Application Sandboxing"> Application Sandboxing:Utilize application sandboxing to isolate untrusted software and limit its ability to interact with other parts of your system. This can prevent ransomware from spreading even if it infiltrates your network.</label><br>
+    
+    <!-- Unsecured API Endpoints -->
+    <h3>Unsecured API Endpoints</h3>
+    <label><input type="checkbox" name="api" value="Authentication and Authorization"> Authentication and Authorization:Implement strong authentication methods like API keys, OAuth, or OpenID Connect to restrict access to authorized users and applications. Enforce granular authorization controls to limit what actions users and applications can perform through the API</label><br>
+    <label><input type="checkbox" name="api" value="Data Validation"> Data Validation:Validate all user input rigorously to prevent malicious code injection attempts (SQL injection, Cross-Site Scripting (XSS), etc.). Sanitize and filter data before processing it within your system.</label><br>
+    <label><input type="checkbox" name="api" value="Encryption"> Encryption:Encrypt data at rest and in transit using strong encryption algorithms like AES-256. This protects sensitive information from unauthorized access even if attackers breach the API. Use HTTPS for all API communication to ensure data confidentiality and integrity during transmission.</label><br>
+    <label><input type="checkbox" name="api" value="Rate Limiting"> Rate Limiting:Implement rate limiting to prevent brute-force attacks and Denial-of-Service (DoS) attacks. This can help restrict the number of API requests from a single source within a specific timeframe.</label><br>
+    <label><input type="checkbox" name="api" value="API Monitoring"> API Monitoring</label><br>
+    <label><input type="checkbox" name="api" value="API Inventory and Documentation"> API Inventory and Documentation</label><br>
+    <label><input type="checkbox" name="api" value="Regular Penetration Testing"> Regular Penetration Testing</label><br>
+    <label><input type="checkbox" name="api" value="Software Updates"> Software Updates</label><br>
+  </form>
+  
+  <button onclick="generateTechnicalReport()">Generate Report</button>
+</div>
+
+<div id="technical-report"></div>
+
+<div id="final-score"></div>
+
+
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
